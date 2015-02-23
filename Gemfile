@@ -3,6 +3,7 @@ gem 'rails_12factor'
 gem 'hublot'
 gem 'omniauth-twitter'
 gem 'figaro'
+gem 'httparty'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
