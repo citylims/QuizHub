@@ -9,6 +9,17 @@
     <% end %>
 </div>
 
+
+<!-- <h1><%= @result %></h1> -->
+<p><%= @question %></p>
+<!-- <p><%= @res %></p> -->
+
+<ul>
+  <% @res.each do |r| %>
+  <li><%= r["question"] %></li>
+  <% end %>
+</ul>
+
 <div class="cats">
   <ul>
   <% @quizzes.each do |quiz| %>
