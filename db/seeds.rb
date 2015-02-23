@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Quiz.destroy_all
+quizzes = Quiz.create([{ category: "Science"}, { category: "Sports"}, { category: "Television"}, { category: "Animals"}, { category: "Potpourriiii"}, { category: "3 Letter Words"}, { category: "People"}, { category: "Mythology"}])
