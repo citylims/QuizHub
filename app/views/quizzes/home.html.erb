@@ -8,3 +8,11 @@
     <%= link_to "Sign in with Twitter", "/auth/twitter" %>
     <% end %>
 </div>
+
+<div class="cats">
+  <ul>
+  <% @quizzes.each do |quiz| %>
+    <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
+  <% end %>
+  </ul>
+</div>
