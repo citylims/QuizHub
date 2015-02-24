@@ -17,13 +17,18 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    if @question.save
-      redirect_to :action => :index
-    else
-      render 'new'
+    respond_to do |format|
+      if @question.save
+        format.html { redirect_to :action => :index, notice: 'Question was succesfully created.'}
+        format.js
+        format.json { render json: @question, status: :created, location: @question}
+      else
+        format.html { render action: "new" }
+        format.json { render json: @question.errors, status: :unprocessable_entity }
+      end
     end
   end
-
+  
   def edit
 
   end

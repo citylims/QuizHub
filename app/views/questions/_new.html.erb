@@ -3,7 +3,7 @@
   <h3>Category: <%= @quiz.category %></h3>
   <h4>Author: <%= @quiz.author %></h4>
   <h4>id: <%= @quiz.id %></h4>
-  <%= form_for([@quiz, @question]) do |f| %>
+  <%= form_for([@quiz, @question], remote: true) do |f| %>
   <fieldset>
     <legend>New Question</legend>
     <div class="field">
@@ -15,8 +15,11 @@
       <%= f.text_field :answer %>
       <%= f.hidden_field :quiz_id, :value => @quiz.id %>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit class: 'add-question'%>
     </div>
   </fieldset>
   <% end %>
+</div>
+<div>
+  <%= render "questions" %>
 </div>
