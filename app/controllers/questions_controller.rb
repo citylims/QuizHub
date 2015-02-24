@@ -16,9 +16,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Quiz.new(question_params)
-    if @quiz.save
-      redirect_to :action => :home
+    @question = Question.new(question_params)
+    if @question.save
+      redirect_to :action => :index
     else
       render 'new'
     end
@@ -39,7 +39,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-   params.require(:question).permit(:question, :answer)
+   params.require(:question).permit(:question, :answer, :quiz_id)
   end
 
 end
