@@ -15,8 +15,11 @@
       <%= f.text_field :answer %>
       <%= f.hidden_field :quiz_id, :value => @quiz.id %>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit class: 'add-question'%>
     </div>
   </fieldset>
   <% end %>
+</div>
+<div>
+  <%= render "questions" %>
 </div>

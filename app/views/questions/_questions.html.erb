@@ -1,0 +1,7 @@
+<ul>
+  <% @quiz.questions.each do |question| %>
+    <li>Question: <%= question.question %></li>
+    <li>Answer: <%= question.answer %></li>
+    <%= link_to "Edit", edit_quiz_question_path(@quiz, question) %>
+  <% end %>
+</ul>

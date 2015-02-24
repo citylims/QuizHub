@@ -8,11 +8,5 @@
 
 <div class="question-index-list">
   <h1>Yo</h1>
-  <ul>
-    <% @quiz.questions.each do |question| %>
-      <li>Question: <%= question.question %></li>
-      <li>Answer: <%= question.answer %></li>
-      <%= link_to "Edit", edit_quiz_question_path(@quiz, question) %>
-    <% end %>
-  </ul>
+  <%= render "questions" %>
 </div>
