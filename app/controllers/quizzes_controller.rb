@@ -4,15 +4,10 @@ class QuizzesController < ApplicationController
     if current_user
       @id = current_user.id
       @user_quizzes = Quiz.where(user_id: @id)
-      @trivia = Quiz.where(author: "trivia")
-      @customs = Quiz.where(custom: true)
-      @quiz = Quiz.last
-    else
-      @trivia = Quiz.where(author: "trivia")
-      @customs = Quiz.where(custom: true)
-      @quiz = Quiz.last
     end
-
+      @trivia = Quiz.where(author: "trivia")
+      @customs = Quiz.where(custom: true)
+      @quiz = Quiz.last
   end
 
   def show
