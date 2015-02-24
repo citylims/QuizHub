@@ -1,6 +1,6 @@
 <div class="new-quiz-form">
   <%= form_for @quiz do |f| %>
-  <!-- <% if @quiz.errors.any? %>
+  <% if @quiz.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@quiz.errors.count, "error") %> prohibited this quiz from being saved:</h2>
       <ul>
@@ -9,7 +9,7 @@
       <% end %>
       </ul>
     </div>
-  <% end %> -->
+  <% end %>
   <fieldset>
     <legend>New Quiz</legend>
     <div class="field">

@@ -1,0 +1,17 @@
+<div class="new-question-form">
+  <%= form_for([@quiz, @question]) do |f| %>
+  <fieldset>
+    <legend>New Question</legend>
+    <div class="field">
+      <%= f.label :question %><br>
+      <%= f.text_field :question %>
+    </div>
+    <div class="field">
+      <%= f.label :answer %><br>
+      <%= f.text_field :answer %>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
+  <% end %>
+</div>

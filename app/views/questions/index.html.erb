@@ -1,1 +1,17 @@
 <h1>Questions</h1>
+<h3><%= @quiz.name %></h3>
+<h3><%= @quiz.category %></h3>
+<h3><%= @quiz.author %></h3>
+
+<%= link_to "Add Question", new_quiz_question_path(@quiz) %>
+
+
+<div class="question-index-list">
+  <ul>
+    <% @quiz.questions.each do |question| %>
+      <li>Question: <%= question.question %></li>
+      <li>Answer: <%= question.answer %></li>
+      <%= link_to "Edit", edit_quiz_question_path(@quiz) %>
+    <% end %>
+  </ul>
+</div>
