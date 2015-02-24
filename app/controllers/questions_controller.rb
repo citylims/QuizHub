@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     respond_to do |format|
       if @question.save
-        format.html { redirect_to :action => :index, notice: 'Question was succesfully created.'}
+        format.html { redirect_to :action => :new, notice: 'Question was succesfully created.'}
         format.js
         format.json { render json: @question, status: :created, location: @question}
       else
@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
       end
     end
   end
-  
+
   def edit
 
   end
