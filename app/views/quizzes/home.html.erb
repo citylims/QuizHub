@@ -5,7 +5,14 @@
     Welcome <%= current_user.name %>!
     <%= link_to "Sign Out", signout_path %>
     <%= link_to "Create Quiz", new_quiz_path%>
-
+    <div class="user-quizzes">
+      <h3><%= current_user.name %>'s Quizzes</h3>
+      <ul>
+        <% @user_quizzes.each do |quiz| %>
+        <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
+        <% end %>
+      </ul>
+    </div>
   <% else %>
     <%= link_to "Sign in with Twitter", "/auth/twitter" %>
     <% end %>
@@ -16,17 +23,18 @@
 <p><%= @question %></p>
 <!-- <p><%= @res %></p> -->
 
-
+<h3>Community Quizzes</h3>
 <ul>
   <% @customs.each do |quiz| %>
   <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
   <% end %>
 </ul>
 
-<!-- <div class="cats">
+<h3>Trivia Quizzes</h3>
+<div class="cats">
   <ul>
   <% @quizzes.each do |quiz| %>
     <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
   <% end %>
   </ul>
-</div> -->
+</div>

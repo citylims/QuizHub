@@ -1,8 +1,10 @@
 class QuizzesController < ApplicationController
 
   def home
+    @id = current_user.id
     @quizzes = Quiz.all
     @customs = Quiz.where(custom: true)
+    @user_quizzes = Quiz.where(user_id: @id)
     @quiz = Quiz.last
 
     # @res = HTTParty.get("http://jservice.io/api/clues")
