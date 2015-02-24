@@ -17,11 +17,15 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    # if @question.save
+    #   redirect_to(:back)
+    # else
+    #   redirect_to(:index)
     respond_to do |format|
       if @question.save
         format.html { redirect_to :action => :new, notice: 'Question was succesfully created.'}
         format.js
-        format.json { render json: @question, status: :created, location: @question}
+        format.json { render json: @question, status: :created, location: @quiz}
       else
         format.html { render action: "new" }
         format.json { render json: @question.errors, status: :unprocessable_entity }
@@ -32,10 +36,10 @@ class QuestionsController < ApplicationController
   def edit
     @quiz = Quiz.find_by_id(params[:quiz_id])
     @question = Question.find_by_id(params[:id])
-    respond_to do |format|
-      format.html { render :edit }
-      format.json { render json: @selection }
-    end
+    # respond_to do |format|
+    #   format.html { render :edit }
+    #   format.json { render json: @selection }
+    # end
   end
 
   def update
@@ -43,12 +47,12 @@ class QuestionsController < ApplicationController
     @question.update(question_params)
     respond_to do |format|
       if @question.save
-        format.html { redirect_to :action => :new, notice: 'Question was succesfully created.'}
+        # format.html { redirect_to :action => :edit, notice: 'Question was succesfully created.'}
         format.js
-        format.json { render json: @question, status: :created, location: @question}
+        # format.json { render json: @question, status: :created, location: @question}
       else
-        format.html { render action: "new" }
-        format.json { render json: @question.errors, status: :unprocessable_entity }
+        # format.html { render action: "new" }
+        # format.json { render json: @question.errors, status: :unprocessable_entity }
       end
     end
   end
