@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
     @quiz = Quiz.find_by_id(params[:quiz_id])
     @question = Question.find_by_id(params[:id])
     respond_to do |format|
-      format.html { render :show }
+      format.html { render :edit }
       format.json { render json: @selection }
     end
   end
