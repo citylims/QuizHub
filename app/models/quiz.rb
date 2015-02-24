@@ -7,5 +7,4 @@ class Quiz < ActiveRecord::Base
     response = HTTParty.get("http://jservice.io/api/category?id=" + self.cat_id.to_s)
     return response["clues"]
   end
-
 end

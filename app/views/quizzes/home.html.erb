@@ -1,5 +1,5 @@
 <div class="home">
-  <h1> HELLO WORLD </h1>
+  <h1> Welcome to Quizdown </h1>
 
   <% if current_user %>
     Welcome <%= current_user.name %>!
@@ -33,7 +33,7 @@
 <h3>Trivia Quizzes</h3>
 <div class="cats">
   <ul>
-  <% @quizzes.each do |quiz| %>
+  <% @trivia.each do |quiz| %>
     <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
   <% end %>
   </ul>

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Quiz.destroy_all
-quizzes = Quiz.create([{ category: "Science", cat_id: 25}, { category: "Sports", cat_id: 42}, { category: "Television", cat_id: 67}, { category: "Animals", cat_id: 21}, { category: "Potpourriiii", cat_id: 306 }]) 
+quizzes = Quiz.create([{ category: "Science", cat_id: 25, custom: true}, { category: "Sports", cat_id: 42, custom: false}, { category: "Television", cat_id: 67, custom: false}, { category: "Animals", cat_id: 21, custom: false}, { category: "Potpourriiii", cat_id: 306, custom: false}, { category: "US Cities", cat_id: 7, custom: false}, { category: "History", cat_id: 114, custom: false}, { category: "Pop Music", cat_id: 770, custom: false}, { category: "Brand Names", cat_id: 2537, custom: false}, { category: "World Capitals", cat_id: 78, custom: false}, { category: "Mythology", cat_id: 680, custom: false}]) 
 
 
 
