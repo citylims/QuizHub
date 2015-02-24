@@ -2,8 +2,10 @@ class QuizzesController < ApplicationController
 
   def home
     @quizzes = Quiz.all
+    @customs = Quiz.where(custom: true)
     @quiz = Quiz.last
-    @res = HTTParty.get("http://jservice.io/api/clues")
+
+    # @res = HTTParty.get("http://jservice.io/api/clues")
   end
 
   def show
@@ -20,7 +22,12 @@ class QuizzesController < ApplicationController
   end
 
   def create
-
+    @quiz = Quiz.new(quiz_params)
+    if @quiz.save
+      redirect_to :action => :home
+    else
+      render 'new'
+    end
   end
 
   def delete
@@ -30,7 +37,7 @@ class QuizzesController < ApplicationController
   private
 
   def quiz_params
-   params.require(:quiz).permit(:category)
+   params.require(:quiz).permit(:category, :name, :user_id, :custom, :author)
  end
 
 end

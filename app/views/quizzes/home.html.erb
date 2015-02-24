@@ -16,16 +16,17 @@
 <p><%= @question %></p>
 <!-- <p><%= @res %></p> -->
 
+
 <ul>
-  <% @res.each do |r| %>
-  <li><%= r["question"] %></li>
+  <% @customs.each do |quiz| %>
+  <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
   <% end %>
 </ul>
 
-<div class="cats">
+<!-- <div class="cats">
   <ul>
   <% @quizzes.each do |quiz| %>
     <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
   <% end %>
   </ul>
-</div>
+</div> -->

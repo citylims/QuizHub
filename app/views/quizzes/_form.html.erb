@@ -11,7 +11,7 @@
     </div>
   <% end %> -->
   <fieldset>
-    <legend>Create New Quiz</legend>
+    <legend>New Quiz</legend>
     <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
@@ -19,8 +19,12 @@
     <div class="field">
       <%= f.label :category %><br>
       <%= f.text_field :category %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <%= f.hidden_field :custom, :value => true %>
+      <%= f.hidden_field :author, :value => current_user.name %>
     <div class="actions">
       <%= f.submit %>
+
     </div>
   </fieldset>
   <% end %>
