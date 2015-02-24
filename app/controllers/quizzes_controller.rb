@@ -33,7 +33,7 @@ class QuizzesController < ApplicationController
   end
 
   def edit
-
+    @quiz = Quiz.find(params[:id])
   end
 
   def update
