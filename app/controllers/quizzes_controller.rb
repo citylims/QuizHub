@@ -15,6 +15,10 @@ class QuizzesController < ApplicationController
    end
   end
 
+  def new
+    @quiz = Quiz.new
+  end
+
   def create
 
   end
@@ -22,5 +26,11 @@ class QuizzesController < ApplicationController
   def delete
 
   end
+
+  private
+
+  def quiz_params
+   params.require(:quiz).permit(:category)
+ end
 
 end
