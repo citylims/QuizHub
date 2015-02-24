@@ -6,7 +6,7 @@ $(".add-question").on('click', function(){
     $(".question-notice").append("<h5>Sorry you must input a question and answer</h5>")
   }
   else {
-    $(".question-notice").append("<h5>You're Question has been created</h5>")
+    $(".question-notice").append("<h3>You're Question has been created</h3>")
     $(".display-container").append("<p><b>Question:</b> " + quest + "</p><p><b>Answer:</b> " + ans + "</p>")
   }
 })

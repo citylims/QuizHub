@@ -1,5 +1,5 @@
 <div class="edit-question-form">
-  <%= form_for([@quiz, @question]) do |f| %>
+  <%= form_for([@quiz, @question], remote: true) do |f| %>
   <fieldset>
     <legend>Edit Question</legend>
     <div class="field">
