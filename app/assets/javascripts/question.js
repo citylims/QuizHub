@@ -7,9 +7,9 @@ $(".add-question").on('click', function(){
   }
   else {
     $(".question-notice").append("<h5>You're Question has been created</h5>")
+    $(".display-container").append("<p><b>Question:</b> " + quest + "</p><p><b>Answer:</b> " + ans + "</p>")
   }
 })
-
 
 $(".edit-question").on('click', function(){
   console.log("hello")
@@ -20,5 +20,6 @@ $(".edit-question").on('click', function(){
   }
   else {
     $(".question-notice").append("<h5>You're Question has been created</h5>")
+    $(".display-container").append("<p><b>Question:</b> " + quest + "</p><p><b>Answer:</b> " + ans + "</p>")
   }
 })
