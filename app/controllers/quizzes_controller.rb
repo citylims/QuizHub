@@ -32,7 +32,15 @@ class QuizzesController < ApplicationController
     end
   end
 
-  def delete
+  def edit
+
+  end
+
+  def update
+
+  end
+
+  def destroy
 
   end
 

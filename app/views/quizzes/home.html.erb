@@ -9,7 +9,7 @@
       <h3><%= current_user.name %>'s Quizzes</h3>
       <ul>
         <% @user_quizzes.each do |quiz| %>
-        <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
+        <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span><span><%= link_to "Create Questions", quiz_questions_path(quiz) %></span></li>
         <% end %>
       </ul>
     </div>
