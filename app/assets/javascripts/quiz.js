@@ -9,7 +9,7 @@ $('.go').on('click', function(){
     dataType: "json",
     type: "GET",
     success: function( response ) {
-      console.log( response[0] )
+      // console.log( response[0] )
       showQuestion(response);
     },
     error: function( response) {
@@ -111,9 +111,10 @@ $("#side_one").on("click", function() {
   }
 })
 
-
+var foo = 0
+console.log(foo)
 $('.custom-go').on('click', function(){
-  $("#state").empty();
+  $("#custom-state").empty();
   var url = document.URL;
   url += ".json"
   // console.log(url);
@@ -123,7 +124,15 @@ $('.custom-go').on('click', function(){
     type: "GET",
     success: function( response ) {
       console.log(response)
-      showCustomQuestion(response, i);
+      if (foo < response.length ) {
+        showCustomQuestion(response, foo);
+      foo++
+      console.log(foo);
+      }
+      else {
+        foo = 0
+        return foo
+      }
     },
     error: function( response) {
       console.log("oh no")
@@ -132,37 +141,17 @@ $('.custom-go').on('click', function(){
 })
 
 
-// console.log(customArray)
+function showCustomQuestion(response, foo) {
+  console.log(foo)
+  console.log(response[foo].question);
+  console.log(response[foo].answer);
+  var q = response[foo].question;
+  var a = response[foo].answer;
+  render(q, a)
 
-// function showCustomQuestion( response , i){
-//
-//   else {
-//     var question = response[i].question
-//     var answer = response[i].answer
-//     $("#custom-state").append("<h2>"+ question +"</h2>" + "<h3>" + answer + "</h3>");
-//   }
-//   i++
-// }
+}
 
-// function showCustomQuestion(response) {
-//   var customArray = [];
-//   for (var i = 0; i < response.length; i++) {
-//     var num = ((Math.random() * response.length));
-//     num = Math.round(num);
-//     if ( _.contains(customArray, num) ) {
-//         console.log("sorry");
-//     }
-//     else {
-//       return num
-//     }
-//   }
-//   console.log(num)
-//   customArray.push(num);
-//   // customArray.push(num);
-//   var question = response[num].question
-//   var answer = response[num].answer
-//   console.log(question)
-//   console.log(answer)
-//   $("#state").append("<h2>"+ question +"</h2>");
-//   $("#state").append("<h3>"+ answer +"</h3>");
-// }
+function render(question, answer) {
+  $("#custom-state").append("<h2>"+ question +"</h2>");
+  $("#custom-state").append("<h3>"+ answer +"</h3>");
+}
