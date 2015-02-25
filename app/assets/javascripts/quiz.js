@@ -5,14 +5,14 @@ $('.go').on('click', function(){
   $('.go').hide();
   var url = document.URL;
   url += ".json"
-  console.log(url);
+  // console.log(url);
     $.ajax({
     url: url,
     dataType: "json",
     type: "GET",
     success: function( response ) {
       // console.log( response[0] )
-      var p = $(".percentage").text()
+      var p = $(".percentage").text();
       if ( p === "100"){
         $('.go').text("Start Quiz");
         $('.go').toggle();
@@ -20,13 +20,12 @@ $('.go').on('click', function(){
         runner(0,0);
       }
       else {
-        $('.go').text("Next Question")
+        $('.go').text("Next Question");
         showQuestion(response);
-
       }
     },
     error: function( response) {
-      console.log("oh no")
+      // console.log("oh no");
     }
   })
 })
@@ -36,12 +35,10 @@ $('.go').on('click', function(){
 function showQuestion(response) {
   var num = ((Math.random() * response.length));
   num = Math.round(num);
-  var question = (response[num]["question"])
-  var answer = (response[num]["answer"])
-  // console.log(question)
-  console.log(answer)
-  $("#state").append("<h2>"+ question +"</h2>");
-  $("#state").append("<h3 id='hidden'>"+ answer +"</h3>");
+  var q = (response[num]["question"]);
+  var a = (response[num]["answer"]);
+  console.log(a);
+  render(q, a);
 }
 
 
@@ -60,6 +57,7 @@ $(".guess-btn").on('click', function(){
   // console.log(answer)
   checkAnswer(guess, answer);
   $('.go').toggle();
+  $('.custom-go').toggle();
   $(this).toggle();
   $('#hidden').show();
 })
@@ -77,9 +75,28 @@ function checkAnswer(a,b) {
   }
   var weight = equivalency / maxLength;
   // console.log((weight * 100) + "%");
-  weight = (weight * 100)
-  if (weight > 80) {
-      meterScore();
+  weight = (weight * 100);
+  if (weight > 60) {
+    var url = document.URL;
+    url += ".json"
+    // console.log(url);
+      $.ajax({
+      url: url,
+      dataType: "json",
+      type: "GET",
+      success: function( response ) {
+        var leng = response.length;
+        if ( leng > 20) {
+          leng = 20;
+          meterScore(leng);
+        }
+        else {
+          meterScore(leng);
+        }
+        // return meterScore(response.length);
+        }
+      });
+
   }
 }
 
@@ -100,12 +117,15 @@ function runner(percentage, fill){
   }, (Math.random() * 200));
 }
 
-var size = 377;
+
 var count = 0;
 var filler = 0;
 
-function meterScore(){
-  var total = 2
+function meterScore(total){
+  var size = 377;
+  // console.log(url);
+    // getLength();
+  console.log(total)
   if (count === total) {
     console.log("complete");
   }
@@ -116,15 +136,32 @@ function meterScore(){
     filler -= (size/total)
     // console.log(filler);
     runner(percentage, filler);
-    console.log(count);
+    // console.log(count);
   }
+}
+
+function getLength() {
+var url = document.URL;
+url += ".json"
+// console.log(url);
+  $.ajax({
+  url: url,
+  dataType: "json",
+  type: "GET",
+  success: function( response ) {
+    console.log(response.length)
+    // return meterScore(response.length);
+    }
+  });
 }
 
 
 var foo = 0
-console.log(foo)
+// console.log(foo)
 $('.custom-go').on('click', function(){
   $("#state").empty();
+  $('.guess-btn').toggle();
+  $('.custom-go').hide();
   var url = document.URL;
   url += ".json"
   // console.log(url);
@@ -133,29 +170,42 @@ $('.custom-go').on('click', function(){
     dataType: "json",
     type: "GET",
     success: function( response ) {
-      console.log(response)
-      if ( response.length == 0){
+      // console.log(response)
+      var p = $(".percentage").text()
+      if ( p === "100") {
+        $('.custom-go').text("Start Quiz");
+        $('.custom-go').toggle();
+        $('.guess-btn').toggle();
+        runner(0,0);
+      }
+      else if ( response.length == 0){
         alert("There are no questions in this quiz! Sorry")
       }
       else if (foo < response.length ) {
+        $('.custom-go').text("Next Question");
         showCustomQuestion(response, foo);
       foo++
-      console.log(foo);
+      // console.log(foo);
       }
       else {
+
+        $('.custom-go').text("Start Quiz");
+        $('.custom-go').toggle();
+        $('.guess-btn').toggle();
+        runner("",0);
         foo = 0
         return foo
       }
     },
     error: function( response) {
-      console.log("oh no")
+      // console.log("oh no")
     }
   })
 })
 
 function showCustomQuestion(response, foo) {
-  console.log(foo)
-  console.log(response[foo].question);
+  // console.log(foo)
+  // console.log(response[foo].question);
   console.log(response[foo].answer);
   var q = response[foo].question;
   var a = response[foo].answer;
@@ -164,6 +214,6 @@ function showCustomQuestion(response, foo) {
 }
 
 function render(question, answer) {
-  $("#custom-state").append("<h2>"+ question +"</h2>");
-  $("#custom-state").append("<h3>"+ answer +"</h3>");
+  $("#state").append("<h2>"+ question +"</h2>");
+  $("#state").append("<h3 id='hidden'>"+ answer +"</h3>");
 }
