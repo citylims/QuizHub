@@ -61,6 +61,7 @@ $(".guess-btn").on('click', function(){
   checkAnswer(guess, answer);
   $('.go').toggle();
   $(this).toggle();
+  $('#hidden').show();
 })
 
 function checkAnswer(a,b) {
@@ -151,11 +152,6 @@ $('.custom-go').on('click', function(){
     }
   })
 })
-
-function addQuestions(){
-  append
-}
-
 
 function showCustomQuestion(response, foo) {
   console.log(foo)
