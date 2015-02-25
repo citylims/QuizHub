@@ -21,6 +21,11 @@ class QuizzesController < ApplicationController
 
   def custom
     @quiz = Quiz.find(params[:id])
+    @questions = @quiz.questions
+    respond_to do |format|
+      format.html { render :custom }
+      format.json { render json: @questions }
+    end
   end
 
   def new
