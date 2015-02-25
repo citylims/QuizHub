@@ -90,11 +90,12 @@ function runner(percentage, fill){
 }
 
 var size = 377;
-var total = 10;
+
 var count = 0;
 var filler = 0;
 
 function meterScore(){
+  var total = 2;
   if (count === total) {
     console.log("complete");
   }
