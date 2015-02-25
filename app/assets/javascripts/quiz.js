@@ -11,7 +11,16 @@ $('.go').on('click', function(){
     type: "GET",
     success: function( response ) {
       // console.log( response[0] )
-      showQuestion(response);
+      var p = $(".percentage").text()
+      if ( p === "100"){
+        $('.go').text("Start Quiz");
+        runner(0,0);
+      }
+      else {
+        $('.go').text("Next Question")
+        showQuestion(response);
+
+      }
     },
     error: function( response) {
       console.log("oh no")
@@ -33,6 +42,8 @@ function showQuestion(response) {
 }
 
 
+
+
 $("#guess-btn").on('click', function(){
   var guess = $(".guess").val();
   var answer = $("#hidden").text();
@@ -42,36 +53,30 @@ $("#guess-btn").on('click', function(){
   guess = guess.replace(/\W/g, '')
   answer = answer.toLowerCase();
   guess = guess.toLowerCase();
-  console.log(guess)
-  console.log(answer)
+  // console.log(guess)
+  // console.log(answer)
   checkAnswer(guess, answer);
 })
 
 function checkAnswer(a,b) {
-    var lengthA = a.length;
-    var lengthB = b.length;
-    var equivalency = 0;
-    var minLength = (a.length > b.length) ? b.length : a.length;
-    var maxLength = (a.length < b.length) ? b.length : a.length;
-    for(var i = 0; i < minLength; i++) {
-        if(a[i] == b[i]) {
-            equivalency++;
-        }
-    }
-    var weight = equivalency / maxLength;
-    // console.log((weight * 100) + "%");
-    weight = (weight * 100)
-    if (weight > 80) {
-        meterScore();
-      // count++
-      // var percentage = Math.ceil(100*count/total);
-      // console.log(percentage);
-      // filler -= (size/total)
-      // console.log(filler);
-      // runner(percentage, filler);
-      // console.log(count);
+  var lengthA = a.length;
+  var lengthB = b.length;
+  var equivalency = 0;
+  var minLength = (a.length > b.length) ? b.length : a.length;
+  var maxLength = (a.length < b.length) ? b.length : a.length;
+  for(var i = 0; i < minLength; i++) {
+      if(a[i] == b[i]) {
+          equivalency++;
+      }
+  }
+  var weight = equivalency / maxLength;
+  // console.log((weight * 100) + "%");
+  weight = (weight * 100)
+  if (weight > 80) {
+      meterScore();
   }
 }
+
 
 var paths = document.getElementsByClassName('meter');
 var path = paths[paths.length-1];
@@ -90,21 +95,20 @@ function runner(percentage, fill){
 }
 
 var size = 377;
-
 var count = 0;
 var filler = 0;
 
 function meterScore(){
-  var total = 2;
+  var total = 2
   if (count === total) {
     console.log("complete");
   }
   else {
     count++
     var percentage = Math.ceil(100*count/total);
-    console.log(percentage);
+    // console.log(percentage);
     filler -= (size/total)
-    console.log(filler);
+    // console.log(filler);
     runner(percentage, filler);
     console.log(count);
   }
