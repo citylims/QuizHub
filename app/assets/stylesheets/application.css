@@ -18,7 +18,12 @@
   display: none;
 }
 
+#state {
+  margin-top: 200px;
+}
+
 .controls {
+  margin-top: 50px;
   display: none;
 }
 

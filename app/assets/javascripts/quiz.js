@@ -112,10 +112,6 @@ $("#side_one").on("click", function() {
 })
 
 
-
-
-
-
 $('.custom-go').on('click', function(){
   $("#state").empty();
   var url = document.URL;
@@ -147,8 +143,6 @@ $('.custom-go').on('click', function(){
 //   }
 //   i++
 // }
-
-
 
 // function showCustomQuestion(response) {
 //   var customArray = [];
