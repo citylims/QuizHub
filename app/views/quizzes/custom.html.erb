@@ -1,9 +1,6 @@
 <div class="quiz-show">
-  <h1 id="start">Custom Quiz</h1>
-  <div class="quiz-details">
-    <h2> Quiz: <%= @quiz.name %></h2>
-  </div>
-  <button class="custom-go">click</button>
+  <h1 id="start">It's Custom Quiz Time</h1>
+
 </div>
 
 <div class="loading-indicator">
@@ -14,12 +11,11 @@
   </div>
 <p><b class="percentage"></b></p>
 
-<div id="state"></div>
-
-
-<div class="controls">
-
-  <input type="text" class="guess"></input>
-  <button id="guess-btn">Guess</button>
-
+<div class="interface">
+  <div id="state"></div>
+  <div class="controls">
+    <input type="text" class="guess"></input>
+    <button class="custom-go">Start Quiz</button>
+    <button class="guess-btn">Guess</button>
+  </div>
 </div>
