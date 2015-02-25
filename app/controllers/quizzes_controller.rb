@@ -51,7 +51,7 @@ class QuizzesController < ApplicationController
   private
 
   def quiz_params
-   params.require(:quiz).permit(:category, :name, :user_id, :custom, :author)
+   params.require(:quiz).permit(:category, :name, :user_id, :custom, :author, :private)
   end
 
 end
