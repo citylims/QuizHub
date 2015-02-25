@@ -1,3 +1,4 @@
+//trivia quiz clicker
 $('.go').on('click', function(){
   $("#state").empty();
   $(".controls").show();
@@ -19,15 +20,16 @@ $('.go').on('click', function(){
 })
 
 
+
 function showQuestion(response) {
   var num = ((Math.random() * response.length));
-    num = Math.round(num);
-    var question = (response[num]["question"])
-    var answer = (response[num]["answer"])
-    console.log(question)
-    console.log(answer)
-    $("#state").append("<h2>"+ question +"</h2>");
-    $("#state").append("<h3 id='hidden'>"+ answer +"</h3>");
+  num = Math.round(num);
+  var question = (response[num]["question"])
+  var answer = (response[num]["answer"])
+  // console.log(question)
+  console.log(answer)
+  $("#state").append("<h2>"+ question +"</h2>");
+  $("#state").append("<h3 id='hidden'>"+ answer +"</h3>");
 }
 
 
@@ -60,13 +62,14 @@ function checkAnswer(a,b) {
     // console.log((weight * 100) + "%");
     weight = (weight * 100)
     if (weight > 80) {
-      count++
-      var percentage = Math.ceil(100*count/total);
-      console.log(percentage);
-      filler -= (size/total)
-      console.log(filler);
-      runner(percentage, filler);
-      console.log(count);
+        meterScore();
+      // count++
+      // var percentage = Math.ceil(100*count/total);
+      // console.log(percentage);
+      // filler -= (size/total)
+      // console.log(filler);
+      // runner(percentage, filler);
+      // console.log(count);
   }
 }
 
@@ -91,12 +94,7 @@ var total = 10;
 var count = 0;
 var filler = 0;
 
-
-var question = $("#side_one").val()
-var answer = $("#side_two").val();
-
-
-$("#side_one").on("click", function() {
+function meterScore(){
   if (count === total) {
     console.log("complete");
   }
@@ -109,13 +107,13 @@ $("#side_one").on("click", function() {
     runner(percentage, filler);
     console.log(count);
   }
-})
+}
 
 
 var foo = 0
 console.log(foo)
 $('.custom-go').on('click', function(){
-  $("#custom-state").empty();
+  $("#state").empty();
   var url = document.URL;
   url += ".json"
   // console.log(url);
@@ -125,7 +123,10 @@ $('.custom-go').on('click', function(){
     type: "GET",
     success: function( response ) {
       console.log(response)
-      if (foo < response.length ) {
+      if ( response.length == 0){
+        alert("There are no questions in this quiz! Sorry")
+      }
+      else if (foo < response.length ) {
         showCustomQuestion(response, foo);
       foo++
       console.log(foo);
@@ -140,6 +141,10 @@ $('.custom-go').on('click', function(){
     }
   })
 })
+
+function addQuestions(){
+  append
+}
 
 
 function showCustomQuestion(response, foo) {
