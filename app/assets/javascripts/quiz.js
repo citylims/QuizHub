@@ -18,24 +18,26 @@ $('.go').on('click', function(){
   })
 })
 
+
 function showQuestion(response) {
   var num = ((Math.random() * response.length));
     num = Math.round(num);
-    var q = (response[num]["question"])
-    var a = (response[num]["answer"])
-    render(q, a);
-    // console.log(question)
-    // console.log(answer)
-    // $("#state").append("<h2>"+ question +"</h2>");
-    // $("#state").append("<h3 id='hidden'>"+ answer +"</h3>");
+    var question = (response[num]["question"])
+    var answer = (response[num]["answer"])
+    console.log(question)
+    console.log(answer)
+    $("#state").append("<h2>"+ question +"</h2>");
+    $("#state").append("<h3 id='hidden'>"+ answer +"</h3>");
 }
 
 
 $("#guess-btn").on('click', function(){
   var guess = $(".guess").val();
   var answer = $("#hidden").text();
-  answer = answer.replace(/\W/g, '');
-  guess = guess.replace(/\W/g, '');
+  answer = answer.replace(/\s/g, '');
+  answer = answer.replace(/\W/g, '')
+  guess = guess.replace(/\s/g, '');
+  guess = guess.replace(/\W/g, '')
   answer = answer.toLowerCase();
   guess = guess.toLowerCase();
   console.log(guess)
@@ -151,6 +153,6 @@ function showCustomQuestion(response, foo) {
 }
 
 function render(question, answer) {
-  $("#state").append("<h2>"+ question +"</h2>");
-  $("#state").append("<h3>"+ answer +"</h3>");
+  $("#custom-state").append("<h2>"+ question +"</h2>");
+  $("#custom-state").append("<h3>"+ answer +"</h3>");
 }
