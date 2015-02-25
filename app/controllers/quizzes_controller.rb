@@ -11,12 +11,16 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    quiz = Quiz.find(params[:id])
-    @selection = quiz.get_question
+    @quiz = Quiz.find(params[:id])
+    @selection = @quiz.get_question
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @selection }
-   end
+    end
+  end
+
+  def custom
+    @quiz = Quiz.find(params[:id])
   end
 
   def new

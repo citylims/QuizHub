@@ -26,7 +26,7 @@
 <h3>Community Quizzes</h3>
 <ul>
   <% @customs.each do |quiz| %>
-  <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
+  <li><%= quiz.category %><span><%= link_to "Start Quiz", custom_path(quiz) %></span></li>
   <% end %>
 </ul>
 

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   match "/signout" => "sessions#destroy", :as => :signout, via: [:get]
 
   resources :quizzes do
-    resources :questions 
+    resources :questions
   end
+
+  match "custom/:id" => "quizzes#custom", :as => :custom, via: [:get]
+
 end
