@@ -6,7 +6,7 @@ class QuizzesController < ApplicationController
       @user_quizzes = Quiz.where(user_id: @id)
     end
       @trivia = Quiz.where(author: "trivia")
-      @customs = Quiz.where(custom: true)
+      @customs = Quiz.where(custom: true, private: "Public")  
       @quiz = Quiz.last
   end
 
