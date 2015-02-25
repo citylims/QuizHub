@@ -1,7 +1,8 @@
 //trivia quiz clicker
 $('.go').on('click', function(){
   $("#state").empty();
-  $(".controls").show();
+  $('.guess-btn').toggle();
+  $('.go').hide();
   var url = document.URL;
   url += ".json"
   console.log(url);
@@ -14,6 +15,8 @@ $('.go').on('click', function(){
       var p = $(".percentage").text()
       if ( p === "100"){
         $('.go').text("Start Quiz");
+        $('.go').toggle();
+        $('.guess-btn').toggle();
         runner(0,0);
       }
       else {
@@ -44,7 +47,7 @@ function showQuestion(response) {
 
 
 
-$("#guess-btn").on('click', function(){
+$(".guess-btn").on('click', function(){
   var guess = $(".guess").val();
   var answer = $("#hidden").text();
   answer = answer.replace(/\s/g, '');
@@ -56,6 +59,8 @@ $("#guess-btn").on('click', function(){
   // console.log(guess)
   // console.log(answer)
   checkAnswer(guess, answer);
+  $('.go').toggle();
+  $(this).toggle();
 })
 
 function checkAnswer(a,b) {
