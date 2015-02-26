@@ -35,7 +35,7 @@ class QuizzesController < ApplicationController
   def create
     @quiz = Quiz.new(quiz_params)
     if @quiz.save
-      redirect_to :action => :home
+      redirect_to(quiz_questions_path(@quiz))
     else
       render 'new'
     end
