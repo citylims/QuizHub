@@ -8,7 +8,6 @@
 
 #start {
   text-align: left;
-  padding-left: 5em;
 }
 
 .big-button {
@@ -24,7 +23,6 @@
   box-shadow: inset 0 .1em rgba(255,255,255,0.1), 0 .1em .1em black, 0 0.2em rgba(255,255,255,0.1), 0 0 0 .2em rgba(0,0,0,0.1);
 
   color: $primary-color;
-  /* text-shadow: 0 0.1em rgba(255,255,255,0.1), 0 -0.1em rgba(0,0,0,0.2); */
 }
 
 
@@ -40,7 +38,7 @@
 }
 
 .interface {
-  margin: 150px;
+  margin: 200px;
   height: 175px;
   background: $accent-background;
   text-align: center;
