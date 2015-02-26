@@ -6,9 +6,7 @@
 }
 
 #state {
-  /* margin-top: 200px; */
-  /* margin-top: 200px; */
-  /* width: 60%; */
+  padding-top: 5px;
   height: 125px;
   width: 100%;
   border-bottom: 4px solid black;
@@ -19,15 +17,23 @@
   height: 175px;
   background: yellow;
   text-align: center;
+}
 
+.guess {
+  width: 200px;
+}
+
+.control-buttons {
+  padding-top: 20px;
 }
 
 .guess-btn {
   display: none;
 }
+
 .controls {
   padding-top: 10px;
-  height: 50px;
+  height: 75px;
   background: red;
 }
 
@@ -56,7 +62,6 @@ p {
   left: 50%;
   transform: translate3d(-50%, 0, 0);
 }
-
 
 svg circle {
   stroke: red;
