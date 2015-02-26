@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to(:back)
     else
-      redirect_to(:index)
+      redirect_to(:back)
     end
   end
 

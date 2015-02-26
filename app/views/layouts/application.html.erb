@@ -6,6 +6,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if current_user %>
+  <nav>
+    <ul>
+      <li><%= link_to "QuizDown", root_url %>
+      <li>Welcome <%= current_user.name %>!</li>
+      <li><%= link_to "Sign Out", signout_path %></li>
+      <li><%= link_to "Create Quiz", new_quiz_path %></li>
+    </ul>
+  </nav>
+  <% else %>
+  <nav>
+    <ul>
+      <li>Welcome Guest!</li>
+      <li><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
+    </ul>
+  </nav>
+  <% end %>
   <%= yield %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>

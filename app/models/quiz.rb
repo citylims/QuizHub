@@ -5,7 +5,7 @@ class Quiz < ActiveRecord::Base
   validates :name, uniqueness: true
 
   def get_question
-    response = HTTParty.get("https://jservice.io/api/category?id=" + self.cat_id.to_s)
+    response = HTTParty.get("http://jservice.io/api/category?id=" + self.cat_id.to_s)
     return response["clues"]
   end
 end

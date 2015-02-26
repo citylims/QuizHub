@@ -7,7 +7,6 @@ $(".add-question").on('click', function(){
   }
   else {
     $(".question-notice").append("<h3>You're Question has been created</h3>")
-    $(".display-container").append("<p><b>Question:</b> " + quest + "</p><p><b>Answer:</b> " + ans + "</p>")
   }
 })
 

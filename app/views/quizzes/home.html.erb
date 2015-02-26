@@ -1,12 +1,5 @@
 <div class="home">
   <% if current_user %>
-    <nav>
-      <ul>
-        <li>Welcome <%= current_user.name %>!</li>
-        <li><%= link_to "Sign Out", signout_path %></li>
-        <li><%= link_to "Create Quiz", new_quiz_path %></li>
-      </ul>
-    </nav>
     <h1> Welcome to Quizdown </h1>
     <div class="quiz-list">
       <h3><%= current_user.name %>'s Quizzes</h3>
@@ -14,18 +7,12 @@
         <% @user_quizzes.each do |quiz| %>
           <li><%= quiz.category %></li>
           <li><%= link_to "Start Quiz", quiz_path(quiz) %></li>
-          <li><%= link_to "Create Questions", quiz_questions_path(quiz) %></li>
+          <li><%= link_to "Create/Edit Questions", quiz_questions_path(quiz) %></li>
           <li><%= link_to "Delete Quiz", quiz, :method => :delete %></li>
         <% end %>
       </ul>
     </div>
   <% else %>
-    <nav>
-      <ul>
-        <li>Welcome Guest!</li>
-        <li><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
-      </ul>
-    </nav>
     <h1> Welcome to Quizdown </h1>
   <% end %>
   <h3>Community Quizzes</h3>
