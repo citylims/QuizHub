@@ -2,7 +2,7 @@
   <% @quiz.questions.each do |question| %>
     <li>Question: <%= question.question %></li>
     <li>Answer: <%= question.answer %></li>
-  <li><%= link_to "Edit", edit_quiz_question_path(@quiz, question) %></li>
-  <li><%= link_to "Delete", [question.quiz, question], :method => :delete %></li>
+    <li><%= link_to "Edit", edit_quiz_question_path(@quiz, question) %></li>
+    <li><%= link_to "Delete", [question.quiz, question], :method => :delete %></li>
   <% end %>
 </ul>
