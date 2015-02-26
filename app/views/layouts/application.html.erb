@@ -9,8 +9,8 @@
   <% if current_user %>
   <nav>
     <ul>
-      <li><%= link_to "QuizDown", root_url %>
       <li>Welcome <%= current_user.name %>!</li>
+      <li><%= link_to "Home", root_url %></li>
       <li><%= link_to "Create Quiz", new_quiz_path %></li>
       <li><%= link_to "Manage Quizzes", profile_path(current_user) %></li>
       <li><%= link_to "Sign Out", signout_path %></li>
@@ -20,6 +20,7 @@
   <nav>
     <ul>
       <li>Welcome Guest!</li>
+      <li><%= link_to "Home", root_url %></li>
       <li><%= link_to "Sign in with Twitter", "/auth/twitter" %></li>
     </ul>
   </nav>
