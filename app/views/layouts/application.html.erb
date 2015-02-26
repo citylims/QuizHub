@@ -13,6 +13,7 @@
       <li>Welcome <%= current_user.name %>!</li>
       <li><%= link_to "Sign Out", signout_path %></li>
       <li><%= link_to "Create Quiz", new_quiz_path %></li>
+      <li><%= link_to "Manage Quizzes", profile_path(current_user) %></li>
     </ul>
   </nav>
   <% else %>
