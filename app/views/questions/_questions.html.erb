@@ -1,8 +1,12 @@
-<ul>
-  <% @quiz.questions.each do |question| %>
-    <li>Question: <%= question.question %></li>
-    <li>Answer: <%= question.answer %></li>
-    <li><%= link_to "Edit", edit_quiz_question_path(@quiz, question) %></li>
-    <li><%= link_to "Delete", [question.quiz, question], :method => :delete %></li>
-  <% end %>
-</ul>
+<section>
+  <div class="quiz-list">
+    <% @quiz.questions.each do |question| %>
+      <ul class="question-list-item">
+        <li>Question: <%= question.question %></li>
+        <li>Answer: <%= question.answer %></li>
+        <li><%= link_to "Edit", edit_quiz_question_path(@quiz, question) %></li>
+        <li><%= link_to "Delete", [question.quiz, question], :method => :delete %></li>
+      </ul>
+    <% end %>
+  </div>
+</section>

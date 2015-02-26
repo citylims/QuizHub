@@ -28,7 +28,8 @@ section {
   @include container(100%);
   float: left;
   h2 {
-    margin-left: 1em;
+    text-align: center;
+    /* margin-left: 1em; */
     text-decoration: underline;
   }
   /* background-color:yellow; */

@@ -1,9 +1,7 @@
-<h1>Questions</h1>
-<h3><%= @quiz.name %></h3>
-<h3><%= @quiz.category %></h3>
-<h3><%= @quiz.author %></h3>
-<%= link_to "Add Question", new_quiz_question_path(@quiz) %>
-<div class="question-index-list">
-  <h1>Manage Questions</h1>
-  <%= render "questions" %>
+<div class="question-page">
+  <div class="question-header">
+    <h1><b>Quiz:</b> <%= @quiz.name %></h1>
+    <%= link_to "Add Question", new_quiz_question_path(@quiz) %>
+  </div>
+<%= render "questions" %>
 </div>
