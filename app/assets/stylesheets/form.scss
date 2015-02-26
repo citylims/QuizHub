@@ -5,7 +5,7 @@ form {
 }
 
 form {
-  padding: 20px 15%;
+  padding: 10px 30%;
 }
 
 form > div > label,
@@ -17,11 +17,12 @@ legend {
 
 input[type=text],
 textarea {
-	width: 50%;
+	width: 70%;
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
+  color: black;
 }
 
 input[type=text]:focus,
@@ -30,30 +31,58 @@ textarea:focus {
   border-color: #4697e4;
 }
 
+fieldset {
+  background-color: white;
+  border-radius: 5px;;
+}
+
+.add-question {
+  color: black;
+}
+
+.actions {
+  margin-top: 10px;
+  input {
+    color: black;
+  }
+}
+
+.question-form {
+  text-align: center;
+  h1 {
+    font-size: 2.5em;
+    text-decoration: underline;
+  }
+}
+
+.new-quiz-form {
+  h1 {
+    font-size: 2.5em;
+    text-decoration: underline;
+  }
+}
+
+.field {
+  label {
+    color: black;
+    /* padding-right: 55%; */
+    font-weight: bold;
+    font-size: 120%;
+  }
+}
+
+.question-notice {
+  text-align: center;
+}
+
 @media (max-width: 600px) {
-  /* form > div {
-    margin: 0 0 15px 0;
-  } */
-  /* form > div > label,
-  legend {
-      width: 100%;
-    float: none;
-    margin: 0 0 5px 0;
-  } */
   form > div > div,
   form > div > fieldset > div {
     width: 100%;
     float: none;
   }
-  input[type=text],
-  input[type=email],
-  input[type=url],
-  input[type=password],
-  textarea,
-  select {
-    width: 100%;
-  }
 }
+
 @media (min-width: 1200px) {
   form > div > label,
 	legend {

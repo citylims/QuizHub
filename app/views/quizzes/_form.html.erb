@@ -1,4 +1,7 @@
-<div class="new-quiz-form">
+<div class="question-form">
+  <h1>New Quiz</h1>
+  <h2>Author: <%= current_user.name %></h2>
+</div>
   <%= form_for @quiz do |f| %>
   <% if @quiz.errors.any? %>
     <div id="error_explanation">
@@ -10,6 +13,7 @@
       </ul>
     </div>
   <% end %>
+
   <fieldset>
     <div class="field">
       <%= f.label :name %><br>
@@ -23,12 +27,12 @@
       <%= f.hidden_field :author, :value => current_user.name %>
     </div>
     <div class="field">
-      <%= f.label :privacy %>
+      <%= f.label :Private %>
       <%= f.check_box :private, {}, "Private", "Public" %>
       <!-- <%#= f.check_box (:private, :public) %> -->
       <!-- <%#= f.select :private, ['Public', 'Private'] %> -->
     </div>
-    <div class="action">
+    <div class="actions">
       <%= f.submit %>
     </div>
   </fieldset>

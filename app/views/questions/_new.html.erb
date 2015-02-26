@@ -1,11 +1,11 @@
-<div class="new-question-form">
+<div class="question-form">
+  <h1>Add Questions</h1>
   <h2>Quiz Name: <%= @quiz.name %></h2>
   <h3>Category: <%= @quiz.category %></h3>
   <h4>Author: <%= @quiz.author %></h4>
-  <h4>id: <%= @quiz.id %></h4>
+</div>
   <%= form_for([@quiz, @question]) do |f| %>
   <fieldset>
-    <legend>New Question</legend>
     <div class="field">
       <%= f.label :question %><br>
       <%= f.text_field :question %>
@@ -19,6 +19,5 @@
     </div>
   </fieldset>
   <% end %>
-</div>
 <div class="question-notice">
 </div>
