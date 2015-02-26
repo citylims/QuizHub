@@ -11,7 +11,6 @@
     </div>
   <% end %>
   <fieldset>
-    <legend>New Quiz</legend>
     <div class="field">
       <%= f.label :name %><br>
       <%= f.text_field :name %>
@@ -25,7 +24,9 @@
     </div>
     <div class="field">
       <%= f.label :privacy %>
-      <%= f.select :private, ['Public', 'Private'] %>
+      <%= f.check_box :private, {}, "Private", "Public" %>
+      <!-- <%#= f.check_box (:private, :public) %> -->
+      <!-- <%#= f.select :private, ['Public', 'Private'] %> -->
     </div>
     <div class="action">
       <%= f.submit %>
