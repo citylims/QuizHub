@@ -4,10 +4,6 @@ class QuestionsController < ApplicationController
     @quiz = Quiz.find_by_id(params[:quiz_id])
   end
 
-  def show
-
-  end
-
   def new
     @quiz = Quiz.find_by_id(params[:quiz_id])
     @question = Question.new
