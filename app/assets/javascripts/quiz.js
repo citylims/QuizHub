@@ -49,7 +49,7 @@ $(".guess-btn").on('click', function(){
   $('.go').toggle();
   $('.custom-go').toggle();
   $(this).toggle();
-  $('#hidden').show();
+  $('#hidden').fadeIn(1500);
 });
 
 function checkAnswer(a,b) {
