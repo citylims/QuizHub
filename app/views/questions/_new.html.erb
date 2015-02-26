@@ -4,20 +4,19 @@
   <h3>Category: <%= @quiz.category %></h3>
   <h4>Author: <%= @quiz.author %></h4>
 </div>
-  <%= form_for([@quiz, @question]) do |f| %>
-  <fieldset>
-    <div class="field">
-      <%= f.label :question %><br>
-      <%= f.text_field :question %>
-    </div>
-    <div class="field">
-      <%= f.label :answer %><br>
-      <%= f.text_field :answer %>
-      <%= f.hidden_field :quiz_id, :value => @quiz.id %>
-    <div class="actions">
-      <%= f.submit class: 'add-question'%>
-    </div>
-  </fieldset>
-  <% end %>
-<div class="question-notice">
-</div>
+<%= form_for([@quiz, @question]) do |f| %>
+<fieldset>
+  <div class="field">
+    <%= f.label :question %><br>
+    <%= f.text_field :question %>
+  </div>
+  <div class="field">
+    <%= f.label :answer %><br>
+    <%= f.text_field :answer %>
+    <%= f.hidden_field :quiz_id, :value => @quiz.id %>
+  <div class="actions">
+    <%= f.submit class: 'add-question'%>
+  </div>
+</fieldset>
+<% end %>
+<div class="question-notice"></div>

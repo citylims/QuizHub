@@ -1,21 +1,20 @@
 <div class="question-form">
   <h1>Edit Question</h1>
 <div>
-  <%= form_for([@quiz, @question], remote: true) do |f| %>
-  <fieldset>
-    <div class="field">
-      <%= f.label :question %><br>
-      <%= f.text_field :question %>
-    </div>
-    <div class="field">
-      <%= f.label :answer %><br>
-      <%= f.text_field :answer %>
-      <%= f.hidden_field :quiz_id, :value => @quiz.id %>
-    </div>
-    <div class="actions">
-      <%= f.submit class: 'edit-question'%>
-    </div>
-  </fieldset>
-  <% end %>
-
+<%= form_for([@quiz, @question], remote: true) do |f| %>
+<fieldset>
+  <div class="field">
+    <%= f.label :question %><br>
+    <%= f.text_field :question %>
+  </div>
+  <div class="field">
+    <%= f.label :answer %><br>
+    <%= f.text_field :answer %>
+    <%= f.hidden_field :quiz_id, :value => @quiz.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'edit-question'%>
+  </div>
+</fieldset>
+<% end %>
 <div class="question-notice"></div>
