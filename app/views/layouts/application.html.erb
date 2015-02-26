@@ -11,9 +11,9 @@
     <ul>
       <li><%= link_to "QuizDown", root_url %>
       <li>Welcome <%= current_user.name %>!</li>
-      <li><%= link_to "Sign Out", signout_path %></li>
       <li><%= link_to "Create Quiz", new_quiz_path %></li>
       <li><%= link_to "Manage Quizzes", profile_path(current_user) %></li>
+      <li><%= link_to "Sign Out", signout_path %></li>
     </ul>
   </nav>
   <% else %>
