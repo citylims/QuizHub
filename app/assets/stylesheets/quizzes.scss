@@ -19,12 +19,9 @@
   border-radius: .3em;
   border: 0.1em solid black;
   background: $background-color;
-
   box-shadow: inset 0 .1em rgba(255,255,255,0.1), 0 .1em .1em black, 0 0.2em rgba(255,255,255,0.1), 0 0 0 .2em rgba(0,0,0,0.1);
-
   color: $primary-color;
 }
-
 
 #hidden {
   display: none;
@@ -77,7 +74,6 @@ svg circle:last-of-type {
   stroke: black;
   transition: stroke-dashoffset 0.5s ease-out;
 }
-
 
 p {
   text-align: center;

@@ -22,17 +22,14 @@ $susy: (
 }
 
 section {
-
   width: 100%;
   margin: auto 0;
   @include container(100%);
   float: left;
   h2 {
     text-align: center;
-    /* margin-left: 1em; */
     text-decoration: underline;
   }
-  /* background-color:yellow; */
 }
 
 .quiz-list {
