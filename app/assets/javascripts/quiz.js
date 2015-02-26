@@ -29,6 +29,7 @@ $('.go').on('click', function(){
 });
 
 function showQuestion(response) {
+  $('.guess').val("");
   var num = ((Math.random() * response.length));
   num = Math.round(num);
   var q = (response[num]["question"]);
