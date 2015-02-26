@@ -6,6 +6,7 @@ gem 'figaro'
 gem 'httparty'
 gem 'susy'
 gem 'compass-rails', '~> 2.0.0'
+gem 'breakpoint'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

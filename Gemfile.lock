@@ -39,6 +39,9 @@ GEM
     arel (6.0.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    breakpoint (2.5.0)
+      sass (~> 3.3)
+      sassy-maps (< 1.0.0)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -161,6 +164,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    sassy-maps (0.4.0)
+      sass (~> 3.3)
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
@@ -197,6 +202,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  breakpoint
   byebug
   coffee-rails (~> 4.1.0)
   compass-rails (~> 2.0.0)
