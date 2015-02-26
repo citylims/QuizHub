@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def profile
     @id = current_user.id
-    @user_quizzes = Quiz.where(user_id: @id)
+    @user_quizzes = Quiz.where(private: "Public", user_id: @id)
+    @private_quizzes = Quiz.where(private: "Private", user_id: @id)
   end
 
 end
