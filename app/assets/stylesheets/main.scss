@@ -1,9 +1,12 @@
+@import "susy";
+@import "breakpoint";
+@import 'colors';
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 body {
   font-family: 'Raleway', sans-serif;
-  background: #222630;
-  color: white;
+  background: $background-color;
+  color: $primary-color;
 }
 
 ul {
@@ -34,4 +37,8 @@ nav {
       }
     }
   }
+}
+
+a {
+  color: $accent-color;
 }

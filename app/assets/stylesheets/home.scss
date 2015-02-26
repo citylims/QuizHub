@@ -1,5 +1,6 @@
 @import "susy";
 @import "breakpoint";
+@import 'colors';
 
 $susy: (
   columns: 12,
@@ -30,6 +31,7 @@ section {
 
 .quiz-list {
   @include container(80%);
+  border-top: 5px solid #141C22;
 }
 
 .list-item {
