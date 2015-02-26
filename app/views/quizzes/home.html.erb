@@ -1,40 +1,38 @@
 <div class="home">
-  <h1> Welcome to Quizdown </h1>
-
   <% if current_user %>
-    Welcome <%= current_user.name %>!
-    <%= link_to "Sign Out", signout_path %>
-    <%= link_to "Create Quiz", new_quiz_path%>
-    <div class="user-quizzes">
+    <h1> Welcome to Quizdown </h1>
+    <div class="quiz-list">
       <h3><%= current_user.name %>'s Quizzes</h3>
       <ul>
         <% @user_quizzes.each do |quiz| %>
-        <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span><span><%= link_to "Create Questions", quiz_questions_path(quiz) %></span></li>
+          <li><%= quiz.category %></li>
+          <li><%= link_to "Start Quiz", quiz_path(quiz) %></li>
+          <li><%= link_to "Create/Edit Questions", quiz_questions_path(quiz) %></li>
+          <li><%= link_to "Delete Quiz", quiz, :method => :delete %></li>
         <% end %>
       </ul>
     </div>
   <% else %>
-    <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-    <% end %>
-</div>
-
-
-<!-- <h1><%= @result %></h1> -->
-<p><%= @question %></p>
-<!-- <p><%= @res %></p> -->
-
-<h3>Community Quizzes</h3>
-<ul>
-  <% @customs.each do |quiz| %>
-  <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
+    <h1> Welcome to Quizdown </h1>
   <% end %>
-</ul>
-
-<h3>Trivia Quizzes</h3>
-<div class="cats">
-  <ul>
-  <% @trivia.each do |quiz| %>
-    <li><%= quiz.category %><span><%= link_to "Start Quiz", quiz_path(quiz) %></span></li>
-  <% end %>
-  </ul>
+  <h3>Community Quizzes</h3>
+  <div class="quiz-list">
+    <ul>
+      <% @customs.each do |quiz| %>
+        <li><%= quiz.name %></li>
+        <li><%= quiz.category %></li>
+        <li><%= quiz.author %></li>
+        <li><%= link_to "Start Quiz", custom_path(quiz) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <h3>Trivia Quizzes</h3>
+  <div class="quiz-">
+    <ul>
+      <% @trivia.each do |quiz| %>
+        <li><%= quiz.category %></li>
+        <li><%= link_to "Start Quiz", quiz_path(quiz) %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

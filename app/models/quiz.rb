@@ -1,5 +1,5 @@
 class Quiz < ActiveRecord::Base
-  has_many :questions
+  has_many :questions, dependent: :destroy
   belongs_to :user
   validates :category, :name, :author, presence: true
   validates :name, uniqueness: true

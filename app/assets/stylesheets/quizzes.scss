@@ -1,3 +1,68 @@
 // Place all the styles related to the quizzes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#hidden {
+  display: none;
+}
+
+#state {
+  padding-top: 5px;
+  height: 125px;
+  width: 100%;
+  border-bottom: 4px solid black;
+}
+
+.interface {
+  margin: 200px;
+  height: 175px;
+  background: yellow;
+  text-align: center;
+}
+
+.guess {
+  width: 200px;
+}
+
+.control-buttons {
+  padding-top: 20px;
+}
+
+.guess-btn {
+  display: none;
+}
+
+.controls {
+  padding-top: 10px;
+  height: 75px;
+  background: red;
+}
+
+svg circle:last-of-type {
+  opacity: 0;
+  stroke: #ddd;
+  transition: stroke-dashoffset 0.5s ease-out;
+}
+
+
+p {
+  text-align: center;
+  color: black;
+  font-size: 2rem;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+}
+
+.loading-indicator {
+  width: 10rem;
+  position: absolute;
+  top: 1.3rem;
+  top: 15%;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+
+svg circle {
+  stroke: red;
+}

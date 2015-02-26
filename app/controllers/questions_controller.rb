@@ -17,9 +17,28 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    if @question.save
+      redirect_to(:back)
+    else
+      redirect_to(:back)
+    end
+  end
+
+  def edit
+    @quiz = Quiz.find_by_id(params[:quiz_id])
+    @question = Question.find_by_id(params[:id])
+    respond_to do |format|
+      format.html { render :edit }
+      format.json { render json: @selection }
+    end
+  end
+
+  def update
+    @question = Question.find_by_id(params[:id])
+    @question.update(question_params)
     respond_to do |format|
       if @question.save
-        format.html { redirect_to :action => :new, notice: 'Question was succesfully created.'}
+        format.html { redirect_to :action => :edit, notice: 'Question was succesfully created.'}
         format.js
         format.json { render json: @question, status: :created, location: @question}
       else
@@ -29,16 +48,11 @@ class QuestionsController < ApplicationController
     end
   end
 
-  def edit
-
-  end
-
-  def update
-
-  end
-
   def destroy
-
+    @question = Question.find(params[:id])
+    if @question.delete
+      redirect_to(:back)
+    end
   end
 
   private

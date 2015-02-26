@@ -6,17 +6,26 @@ class QuizzesController < ApplicationController
       @user_quizzes = Quiz.where(user_id: @id)
     end
       @trivia = Quiz.where(author: "trivia")
-      @customs = Quiz.where(custom: true)
+      @customs = Quiz.where(custom: true, private: "Public")
       @quiz = Quiz.last
   end
 
   def show
-    quiz = Quiz.find(params[:id])
-    @selection = quiz.get_question
+    @quiz = Quiz.find(params[:id])
+    @selection = @quiz.get_question
     respond_to do |format|
       format.html { render :show }
       format.json { render json: @selection }
-   end
+    end
+  end
+
+  def custom
+    @quiz = Quiz.find(params[:id])
+    @questions = @quiz.questions
+    respond_to do |format|
+      format.html { render :custom }
+      format.json { render json: @questions }
+    end
   end
 
   def new
@@ -41,13 +50,16 @@ class QuizzesController < ApplicationController
   end
 
   def destroy
-
+    @quiz = Quiz.find(params[:id])
+    if @quiz.delete
+      redirect_to(:back)
+    end
   end
 
   private
 
   def quiz_params
-   params.require(:quiz).permit(:category, :name, :user_id, :custom, :author)
+   params.require(:quiz).permit(:category, :name, :user_id, :custom, :author, :private)
   end
 
 end

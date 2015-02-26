@@ -1,7 +1,21 @@
-<div class="modal-wrapper">
-  <div class="modal">
-    <h1>Modal Title</h1>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
-    <input>
-  </div>
+<div class="edit-question-form">
+  <%= form_for([@quiz, @question], remote: true) do |f| %>
+  <fieldset>
+    <legend>Edit Question</legend>
+    <div class="field">
+      <%= f.label :question %><br>
+      <%= f.text_field :question %>
+    </div>
+    <div class="field">
+      <%= f.label :answer %><br>
+      <%= f.text_field :answer %>
+      <%= f.hidden_field :quiz_id, :value => @quiz.id %>
+    <div class="actions">
+      <%= f.submit class: 'edit-question'%>
+    </div>
+  </fieldset>
+  <% end %>
+</div>
+<div class="question-notice">
+
 </div>
