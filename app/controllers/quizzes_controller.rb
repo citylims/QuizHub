@@ -45,10 +45,6 @@ class QuizzesController < ApplicationController
     @quiz = Quiz.find(params[:id])
   end
 
-  def update
-
-  end
-
   def destroy
     @quiz = Quiz.find(params[:id])
     if @quiz.delete
