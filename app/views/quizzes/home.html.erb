@@ -5,9 +5,9 @@
     <div class="quiz-list">
       <% @customs.each do |quiz| %>
         <ul class="list-item">
-          <li>Quiz Name: <%= quiz.name %></li>
-          <li>Category: <%= quiz.category %></li>
-          <li>Created By: <%= quiz.author %></li>
+          <li><b>Quiz Name:</b> <%= quiz.name %></li>
+          <li><b>Category:</b> <%= quiz.category %></li>
+          <li><b>Created By:</b> <%= quiz.author %></li>
           <li><%= link_to "Start Quiz", custom_path(quiz) %></li>
         </ul>
       <% end %>

@@ -21,13 +21,14 @@ h1 {
 nav {
   top: 0;
   width: 100%;
-  background-color: black;
+  padding: .5em;
+  background-color: $accent-color;
   color: white;
   ul {
     display: inline;
     margin: 0;
     li {
-      margin: 1em;
+      margin: 2em;
       display: inline;
       h1 {
         color: red;
@@ -41,4 +42,7 @@ nav {
 
 a {
   color: $accent-color;
+  &:hover {
+    color: #C33020;
+  }
 }

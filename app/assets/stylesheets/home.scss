@@ -13,6 +13,11 @@ $susy: (
 .home {
   h1 {
     text-align: center;
+    font-size: 3em;
+  }
+  h2 {
+    text-align: center;
+    font-size: 2em;
   }
 }
 
@@ -32,11 +37,20 @@ section {
 .quiz-list {
   @include container(80%);
   border-top: 5px solid #141C22;
+  color: black;
+  a {
+    color: $primary-color;
+    &:hover {
+      color: #C33020;
+      font-weight: bolder;
+    }
+  }
 }
 
 .list-item {
  @include span(3 of 12);
  li {
+   padding: 2%;
    font-size: 120%;
  }
 }

@@ -3,7 +3,7 @@
   <h2>Your Public Quizzes</h2>
   <div class="quiz-list">
     <% @user_quizzes.each do |quiz| %>
-      <ul>
+      <ul class="list-item">
         <li><%= quiz.category %></li>
         <li><%= link_to "Start Quiz", custom_path(quiz) %></li>
         <li><%= link_to "Create/Edit Questions", quiz_questions_path(quiz) %></li>
@@ -16,7 +16,7 @@
   <h2>Your Private Quizzes</h2>
   <div class="quiz-list">
     <% @private_quizzes.each do |quiz| %>
-      <ul>
+      <ul class="list-item">
         <li><%= quiz.category %></li>
         <li><%= link_to "Start Quiz", custom_path(quiz) %></li>
         <li><%= link_to "Create/Edit Questions", quiz_questions_path(quiz) %></li>
