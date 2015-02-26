@@ -4,7 +4,7 @@
     <h2>Community Quizzes</h2>
     <div class="quiz-list">
       <% @customs.each do |quiz| %>
-        <ul>
+        <ul class="list-item">
           <li>Quiz Name: <%= quiz.name %></li>
           <li>Category: <%= quiz.category %></li>
           <li>Created By: <%= quiz.author %></li>
@@ -17,7 +17,7 @@
     <h2>Trivia Quizzes</h2>
     <div class="quiz-list">
       <% @trivia.each do |quiz| %>
-        <ul>
+        <ul class="list-item">
           <li><%= quiz.category %></li>
           <li><%= link_to "Start Quiz", quiz_path(quiz) %></li>
         </ul>

@@ -10,12 +10,14 @@ $susy: (
 );
 
 .home {
-
+  h1 {
+    text-align: center;
+  }
 }
 
 section {
 
-  width: 33.33%;
+  width: 100%;
   margin: auto 0;
   @include container(100%);
   float: left;
@@ -27,14 +29,12 @@ section {
 }
 
 .quiz-list {
-  width: 100%;
-  display: inline-block;
-  /* background: #777; */
-  ul {
-    /* border-bottom: 2px solid green; */
-    li {
-      font-size: 30px;
-    }
-  }
+  @include container(80%);
+}
 
+.list-item {
+ @include span(3 of 12);
+ li {
+   font-size: 120%;
+ }
 }
