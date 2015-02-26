@@ -1,38 +1,44 @@
 <div class="home">
   <% if current_user %>
     <h1> Welcome to Quizdown </h1>
-    <div class="quiz-list">
-      <h3><%= current_user.name %>'s Quizzes</h3>
-      <ul>
+    <section>
+      <h2><%= current_user.name %>'s Quizzes</h2>
+      <div class="quiz-list">
         <% @user_quizzes.each do |quiz| %>
-          <li><%= quiz.category %></li>
-          <li><%= link_to "Start Quiz", quiz_path(quiz) %></li>
-          <li><%= link_to "Create/Edit Questions", quiz_questions_path(quiz) %></li>
-          <li><%= link_to "Delete Quiz", quiz, :method => :delete %></li>
+          <ul>
+            <li><%= quiz.category %></li>
+            <li><%= link_to "Start Quiz", quiz_path(quiz) %></li>
+            <li><%= link_to "Create/Edit Questions", quiz_questions_path(quiz) %></li>
+            <li><%= link_to "Delete Quiz", quiz, :method => :delete %></li>
+          </ul>
         <% end %>
-      </ul>
-    </div>
+      </div>
   <% else %>
     <h1> Welcome to Quizdown </h1>
   <% end %>
-  <h3>Community Quizzes</h3>
-  <div class="quiz-list">
-    <ul>
+  </section>
+  <section>
+    <h2>Community Quizzes</h2>
+    <div class="quiz-list">
       <% @customs.each do |quiz| %>
-        <li><%= quiz.name %></li>
-        <li><%= quiz.category %></li>
-        <li><%= quiz.author %></li>
-        <li><%= link_to "Start Quiz", custom_path(quiz) %></li>
+        <ul>
+          <li>Quiz Name: <%= quiz.name %></li>
+          <li>Category: <%= quiz.category %></li>
+          <li>Created By: <%= quiz.author %></li>
+          <li><%= link_to "Start Quiz", custom_path(quiz) %></li>
+        </ul>
       <% end %>
-    </ul>
-  </div>
-  <h3>Trivia Quizzes</h3>
-  <div class="quiz-">
-    <ul>
+    </div>
+  </section>
+  <section>
+    <h2>Trivia Quizzes</h2>
+    <div class="quiz-list">
       <% @trivia.each do |quiz| %>
-        <li><%= quiz.category %></li>
-        <li><%= link_to "Start Quiz", quiz_path(quiz) %></li>
+        <ul>
+          <li><%= quiz.category %></li>
+          <li><%= link_to "Start Quiz", quiz_path(quiz) %></li>
+        </ul>
       <% end %>
-    </ul>
-  </div>
-</div>
+    </div>
+  </section>
+</div><!--page-->
