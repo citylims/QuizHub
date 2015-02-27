@@ -29,9 +29,12 @@
 
 #state {
   padding-top: 10px;
-  height: 125px;
+  height: 150px;
   width: 100%;
   border-bottom: 4px solid black;
+  h2 {
+    margin-top: 0;
+  }
 }
 
 .interface {
@@ -87,8 +90,8 @@ p {
 .loading-indicator {
   width: 10rem;
   position: absolute;
-  top: 1.3rem;
-  top: 15%;
+  /* top: 1.3rem; */
+  top: 25%;
   left: 50%;
   transform: translate3d(-50%, 0, 0);
 }
