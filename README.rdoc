@@ -1,5 +1,3 @@
-#QuizHub
-##A Custom Quizzer
 Rails Application designed for custom quiz creation.
 Users can create their own private or public quizzes and quiz themselves with an
 integrated UI.
