@@ -1,5 +1,4 @@
 $(".add-question").on('click', function(){
-  console.log("hello")
   var quest = $("#question_question").val();
   var ans = $("#question_answer").val();
   if ((quest == "") || (ans == "")) {
@@ -11,7 +10,6 @@ $(".add-question").on('click', function(){
 })
 
 $(".edit-question").on('click', function(){
-  console.log("hello")
   var quest = $("#question_question").val();
   var ans = $("#question_answer").val();
   if ((quest == "") || (ans == "")) {
@@ -19,6 +17,6 @@ $(".edit-question").on('click', function(){
   }
   else {
     $(".question-notice").append("<h5>You're Question has been edited</h5>")
-    $(".display-container").append("<p><b>Question:</b> " + quest + "</p><p><b>Answer:</b> " + ans + "</p>")
+    $(".display-container").append("<h5>Question " + quest + "</h5><h5>Answer " + ans + "</h5>")
   }
 })
