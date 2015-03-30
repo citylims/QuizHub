@@ -128,7 +128,6 @@ function getLength() {
   type: "GET",
   success: function( response ) {
     console.log(response.length)
-    // return meterScore(response.length);
     }
   });
 };
