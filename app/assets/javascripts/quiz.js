@@ -173,7 +173,6 @@ $('.custom-go').on('click', function() {
   });
 });
 
-
 function customToggle() {
   $('.custom-go').text("Start Quiz");
   $('.custom-go').toggle();
